@@ -1,0 +1,16 @@
+Physics Dept 100 level equipment database
+
+
+Database Stucture
+
+Item [ name , asset number , quantity , description ]
+
+Storage [ name , location reference , description ]
+
+Experiment [ name , description , date ]
+
+Loan [ person , descritption , loan date , due date ]
+
+User [ username , password digest ]
+
+Note [ note ]

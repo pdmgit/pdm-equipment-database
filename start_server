@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Starts the Rails server bound to the guest machines local IP such that it can be seen external to the guest when NAT port forwarding has been set up on the host machine.
+
+USE_IP="10.0.2.15"
+USE_PORT="3000"
+USE_ENV="development"
+
+rails server -b $USE_IP -p $USE_PORT -e $USE_ENV
