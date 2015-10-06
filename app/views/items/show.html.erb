@@ -1,0 +1,18 @@
+<h1>ITEM: <%= @item.name.upcase %></h1>
+<table>
+	<tr>
+		<td>Quantity</td>
+		<td>:</td>
+		<td><%= @item.quantity %></td>
+	</tr>
+	<tr>
+		<td>Asset Number</td>
+		<td>:</td>
+		<td><%= @item.asset_number %></td>
+	</tr>
+	<tr>
+		<td>Description</td>
+		<td>:</td>
+		<td><p><%= @item.description %></p></td>
+	</tr>
+</table>
