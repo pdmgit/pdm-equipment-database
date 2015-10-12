@@ -9,5 +9,6 @@ class Item < ActiveRecord::Base
 	validates( :quantity , presence: true )
 	
 	# Item record asset numbers must be 50 characters or less
-	validates( :asset_number, length: { maximum: 50 } )
+	# Item record asset numbers must be unique
+	validates( :asset_number, length: { maximum: 50 } , uniqueness: true )
 end

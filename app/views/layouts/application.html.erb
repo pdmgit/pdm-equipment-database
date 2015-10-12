@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<%= yield %>
+<header><h1>Equipment Database</h1></header>
+
+<div><%= yield %><div>
+
+<footer><%= debug( params ) if Rails.env.development? %></footer>
 
 </body>
 </html>

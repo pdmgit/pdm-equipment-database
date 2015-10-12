@@ -1,4 +1,4 @@
-<h1>New Item</h1>
+<h1>Edit Item (<%= @item.name %>)</h1>
 
 <div>
 <%= form_for( @item ) do |frm| %>
@@ -15,7 +15,7 @@
 <%=  frm.label :asset_number %>
 <%=  frm.text_field :asset_number %>
 
-<%= frm.submit "Create", class: "btn btn-primary" %>
+<%= frm.submit "Update", class: "btn btn-primary" %>
 
 <% end %>
 </div>

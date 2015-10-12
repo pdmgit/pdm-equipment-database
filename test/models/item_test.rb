@@ -1,3 +1,4 @@
+
 require 'test_helper'
 
 class ItemTest < ActiveSupport::TestCase
@@ -25,12 +26,30 @@ class ItemTest < ActiveSupport::TestCase
 
   end
 
+  test "item name should be unique" do
+    valid_item = Item.new( name: "sonic screwdriver" , quantity: 1 , asset_number: "0-100-2015-1" , description: "Very handy for moving the plot along" )
+    valid_item.save
+
+    invalid_item = Item.new( name: "sonic screwdriver" , quantity: 1 , asset_number: "0-100-2015-2" , description: "checking for item name duplication" )
+
+    assert_not invalid_item.valid?
+  end
+
   test "item name should be between 1 and 50 characters" do
 
   	invalid_item = Item.new( name: "x"*51 , quantity: 1 , asset_number: "0-100-2015-3" , description: "A bunch of nonsense" )
 
   	assert_not invalid_item.valid?
 
+  end
+
+  test "asset number should be unique" do
+    valid_item = Item.new( name: "sonic screwdriver" , quantity: 1 , asset_number: "0-100-2015-1" , description: "Very handy for moving the plot along" )
+    valid_item.save
+
+    invalid_item = Item.new( name: "sonic wrench" , quantity: 1 , asset_number: "0-100-2015-1" , description: "checking for item name duplication" )
+
+    assert_not invalid_item.valid?
   end
 
   test "item asset_number should be between 1 and 50 characters" do

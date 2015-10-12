@@ -1,0 +1,29 @@
+
+<% all_items = Item.all
+	all_items.each do |item| %>
+<div>
+	<table>
+		<tr>
+			<td>Item</td>
+			<td>:</td>
+			<td><%= item.name %></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td>:</td>
+			<td><%= item.description %></td>
+		</tr>
+		<tr>
+			<td>Quantity</td>
+			<td>:</td>
+			<td><%= item.quantity %></td>
+		</tr>
+		<tr>
+			<td>Asset Number</td>
+			<td>:</td>
+			<td><%= item.asset_number %></td>
+		</tr>
+	</table>
+	<div><%= link_to "show" , item_path( item.id ) %></div>
+</div>
+<% end %>
